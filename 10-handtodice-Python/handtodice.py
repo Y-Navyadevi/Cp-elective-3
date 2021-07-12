@@ -6,5 +6,8 @@
 # Hint: You might find // and % useful here, and also getKthDigit().
 
 def handtodice(hand):
-	# your code goes here
-	pass
+	a=(hand//100)  #floor division
+	b=((hand%100)//10) #finding remainder and floor division
+	c=((hand%100)%10) #finding remainder of remainder
+	
+	return a,b,c
