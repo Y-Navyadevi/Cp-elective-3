@@ -15,14 +15,22 @@
 # list
 # [ [ 2, 3, 4, 5],
 #   [ 8, 7, 6, 5],
-#   [ 0, 1, 2, 3] ]
+#   [ 0, 1, 2, 3] ]   
 
 # result
 # [ [ 2, 3, 5],
 #   [ 0, 1, 3] ]
 
 def removeRowAndCol(L, row, col):
-    # Your code goes here...
-    pass
+    result, minusCol = [], []
+    minusRow = L[0:row] + L[row+1:]  # removes row
+    for i in minusRow:
+        minusCol = i[0:col] + i[col+1:]  # removes column
+        result.append(minusCol)
+    return result
+
 
 # Write your own test cases.
+L = [[7, 1, 4, 4],
+     [8, 2, 8, 5],
+     [0, 6, 3, 9]]
