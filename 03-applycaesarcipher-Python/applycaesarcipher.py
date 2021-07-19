@@ -11,13 +11,13 @@
 
 
 def shiftChar(c, shift):  # help function for applyCaesarCipher
-    if (c.isalpha()):
-        baseChar = 'a' if c.islower() else 'A'
-        delta = ord(c) - ord(baseChar)
-        new_delta = (delta + shift) % 26
-        return (chr(ord(baseChar) + new_delta))
-    else:
-        return c
+	if (c.isalpha()):
+		baseChar = 'a' if c.islower() else 'A'
+		delta = ord(c) - ord(baseChar)
+		new_delta = (delta + shift) % 26
+		return (chr(ord(baseChar) + new_delta))
+	else:
+		return c
 
 
 def fun_applycaesarcipher(msg, shift):
@@ -25,8 +25,8 @@ def fun_applycaesarcipher(msg, shift):
 	for c in msg:
 		if c == ' ':
 			sol+= " "
-        else:
-            sol += shiftChar(c, shift)
+		else:
+			sol += shiftChar(c, shift)
 	return sol
 
 
