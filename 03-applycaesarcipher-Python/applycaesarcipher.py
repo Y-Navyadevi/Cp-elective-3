@@ -10,22 +10,24 @@
 # assert(applyCaesarCipher("zodiac", -2) == "xmbgya")
 
 
+def shiftChar(c, shift):  # help function for applyCaesarCipher
+    if (c.isalpha()):
+        baseChar = 'a' if c.islower() else 'A'
+        delta = ord(c) - ord(baseChar)
+        new_delta = (delta + shift) % 26
+        return (chr(ord(baseChar) + new_delta))
+    else:
+        return c
+
+
 def fun_applycaesarcipher(msg, shift):
-    result = ""
- 
-    # traverse text
-    for i in range(len(msg)):
-        char = msg[i]
- 
-        # Encrypt uppercase characters
-        if (char.isupper()):
-            result += chr((ord(char) + shift-65) % 26 + 65)
- 
-        # Encrypt lowercase characters
+	sol = ''
+	for c in msg:
+		if c == ' ':
+			sol+= " "
         else:
-            result += chr((ord(char) + shift - 97) % 26 + 97)
- 
-    return result
+            sol += shiftChar(c, shift)
+	return sol
 
 
 
