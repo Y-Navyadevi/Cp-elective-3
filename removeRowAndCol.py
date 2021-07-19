@@ -21,15 +21,19 @@
 # [ [ 2, 3, 5],
 #   [ 0, 1, 3] ]
 
+
 def removeRowAndCol(L, row, col):
-    result, minusCol = [], []
-    minusRow = L[0:row] + L[row+1:]  # removes row
-    for i in minusRow:
-        minusCol = i[0:col] + i[col+1:]  # removes column
-        result.append(minusCol)
-    return result
+    L.pop(row)
+    for i in range(len(L)):
+        L[i].pop(col)
+    return(L)  
+L=[ [ 2, 3, 4, 5],
+        [ 8, 7, 6, 5],
+        [ 0, 1, 2, 3] ]
 
-
+row=1
+col=2
+print(removeRowAndCol(L,row,col))
 # Write your own test cases.
 L = [[7, 1, 4, 4],
      [8, 2, 8, 5],
