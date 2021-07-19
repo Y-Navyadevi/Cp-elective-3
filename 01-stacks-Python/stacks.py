@@ -7,12 +7,12 @@ why is it easier to add an "insert_first"
 function than just use "append"?"""
 
 class Element(object):
-    def init(self, value):
+    def __init__(self, value):
         self.value = value
         self.next = None
         
 class LinkedList(object):
-    def init(self, head=None):
+    def __init__(self, head=None):
         self.head = head
         
     def append(self, new_element):
@@ -42,7 +42,7 @@ class LinkedList(object):
             return None
 
 class stack(object):
-    def init(self,top=None):
+    def __init__(self,top=None):
         self.ll = LinkedList(top)
 
     def push(self, new_element):
