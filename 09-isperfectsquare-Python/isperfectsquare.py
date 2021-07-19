@@ -4,5 +4,7 @@
 # m**2 == n), and False otherwise. Do not crash on non-ints nor on negative ints.
 
 def isperfectsquare(n):
-	# your code goes here
-	pass
+	if(isinstance(n, int) == False or n < 0):
+		return False
+	else:
+		return n ** 0.5 == int(n ** 0.5)
